@@ -1244,3 +1244,34 @@ footer {
         font-size: 1rem;
     }
 }
+
+.btn-cv {
+    background-color: transparent;
+    color: var(--brown);
+    border: 2px solid var(--brown);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cv:hover {
+    background-color: var(--brown);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4);
+}
+
+.btn-cv i {
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .hero-cta {
+        flex-direction: column;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
