@@ -1,309 +1,244 @@
-document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-    const nav = document.getElementById('mainNav');
-    nav.classList.toggle('active');
-    
-    
-    const icon = this.querySelector('i');
-    if (icon.classList.contains('fa-bars')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        const nav = document.getElementById('mainNav');
-        const menuBtn = document.getElementById('mobileMenuBtn');
-        const icon = menuBtn.querySelector('i');
-        
-        nav.classList.remove('active');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    });
-});
-
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    
-    if (name && email && subject && message) {
-        
-        alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
-        this.reset();
-    } else {
-        alert('Please fill in all fields.');
-    }
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-const scrollToTopBtn = document.getElementById('scrollToTop');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('visible');
-    } else {
-        scrollToTopBtn.classList.remove('visible');
-    }
-});
-
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-const sections = document.querySelectorAll('section');
-
-const revealSection = () => {
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (sectionTop < windowHeight - 100) {
-            section.classList.add('visible');
-            
-            
-            if (section.id === 'portfolio') {
-                const projectCards = document.querySelectorAll('.project-card');
-                projectCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('animated');
-                    }, index * 200);
-                });
-            }
-        }
-    });
-};
-
-window.addEventListener('scroll', revealSection);
-window.addEventListener('load', revealSection);
-
-window.addEventListener('load', () => {
-    
-    const heroBadge = document.querySelector('.hero-badge');
-    const heroTitle = document.querySelector('.hero h1');
-    const heroParagraph = document.querySelector('.hero p');
-    const heroCTA = document.querySelector('.hero-cta');
-    
-    if (heroBadge) heroBadge.style.animationPlayState = 'running';
-    if (heroTitle) heroTitle.style.animationPlayState = 'running';
-    if (heroParagraph) heroParagraph.style.animationPlayState = 'running';
-    if (heroCTA) heroCTA.style.animationPlayState = 'running';
-    
-    
-    const fadeInElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
-    fadeInElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.2}s`;
-        el.style.animationPlayState = 'running';
-    });
-    
-    
-    revealSection();
-    
-    
-    const currentYear = new Date().getFullYear();
-    document.getElementById('currentYear').textContent = currentYear;
-});
-
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        
-        const existingRipples = this.querySelectorAll('.ripple-effect');
-        existingRipples.forEach(ripple => ripple.remove());
-        
-        
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple-effect');
-        
-        this.appendChild(ripple);
-        
-       
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-});
-
-document.querySelectorAll('.project-buttons .btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const projectContent = this.closest('.project-content');
-        if (!projectContent) return;
-        
-        const projectTitle = projectContent.querySelector('h3');
-        if (!projectTitle) return;
-        
-        const titleText = projectTitle.textContent;
-        
-        if (this.textContent.includes('Preview') || this.textContent.includes('Live') || this.textContent.includes('Site')) {
-            alert(`Opening preview for: ${titleText}\n\nNote: Project links would be added here in a real implementation.`);
-        } else if (this.textContent.includes('GitHub') || this.textContent.includes('Code') || this.textContent.includes('Repo')) {
-            alert(`Opening GitHub repository for: ${titleText}\n\nNote: GitHub links would be added here in a real implementation.`);
-        }
-    });
-});
-
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-    .ripple-effect {
-        position: absolute;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.7);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-    }
-    
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(rippleStyle);
-
-
-const profileWrapper = document.querySelector('.profile-image-wrapper');
-if (profileWrapper) {
-    profileWrapper.addEventListener('mouseenter', () => {
-        const overlay = profileWrapper.querySelector('.profile-overlay');
-        if (overlay) {
-            overlay.style.opacity = '1';
-        }
-    });
-    
-    profileWrapper.addEventListener('mouseleave', () => {
-        const overlay = profileWrapper.querySelector('.profile-overlay');
-        if (overlay) {
-            overlay.style.opacity = '0';
-        }
-    });
-}
-
-document.querySelectorAll('.skill').forEach(skill => {
-    skill.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-3px) scale(1.05)';
-    });
-    
-    skill.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        const icon = this.querySelector('.service-icon');
-        if (icon) {
-            icon.style.transform = 'scale(1.2) rotate(5deg)';
-        }
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        const icon = this.querySelector('.service-icon');
-        if (icon) {
-            icon.style.transform = 'scale(1) rotate(0deg)';
-        }
-    });
-});
-
-function typeWriterEffect() {
-    const heroTitle = document.querySelector('.hero h1');
-    if (!heroTitle) return;
-    
-    const originalText = heroTitle.textContent;
-    heroTitle.textContent = '';
-    
-    let i = 0;
-    const typingSpeed = 50; 
-    
-    function typeCharacter() {
-        if (i < originalText.length) {
-            heroTitle.textContent += originalText.charAt(i);
-            i++;
-            setTimeout(typeCharacter, typingSpeed);
-        }
-    }
-    
-    setTimeout(typeCharacter, 1000);
-}
-
-window.addEventListener('scroll', () => {
-    const heroSection = document.querySelector('.hero');
-    if (!heroSection) return;
-    
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    
-    heroSection.style.backgroundPosition = `center ${rate}px`;
-});
-
+// Mobile Menu
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
     
-    function highlightNavLink() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a');
-        
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.scrollY >= sectionTop - 150) {
-                current = section.getAttribute('id');
-            }
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
         
+        // Close menu when clicking links
+        const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
         });
     }
     
-    window.addEventListener('scroll', highlightNavLink);
+    // Scroll to Top
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
     
-    const body = document.querySelector('body');
-    body.classList.add('loaded');
-    
-    const currentYear = new Date().getFullYear();
+    // Current Year
     const yearElement = document.getElementById('currentYear');
     if (yearElement) {
-        yearElement.textContent = currentYear;
+        yearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Copy Email
+    const emailElement = document.getElementById('contact-email');
+    if (emailElement) {
+        emailElement.addEventListener('click', function() {
+            const email = this.textContent;
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = this.textContent;
+                this.textContent = 'Copied!';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            });
+        });
+        emailElement.style.cursor = 'pointer';
+        emailElement.title = 'Click to copy';
+    }
+    
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        const successMessage = document.getElementById('successMessage');
+        const closeSuccessBtn = document.getElementById('closeSuccessMsg');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        // Form submission
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Validate form
+            if (!validateForm()) {
+                return;
+            }
+            
+            // Show loading
+            submitBtn.disabled = true;
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            try {
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value.trim(),
+                    _subject: 'New Contact - Portfolio Website',
+                    _template: 'table',
+                    _captcha: 'false'
+                };
+                
+                // Send to FormSubmit.co using AJAX
+                const response = await fetch('https://formsubmit.co/ajax/danieloluwasegun488@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success === "true") {
+                    // Show success message
+                    successMessage.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Auto-close after 5 seconds
+                    setTimeout(() => {
+                        if (!successMessage.classList.contains('hidden')) {
+                            successMessage.classList.add('hidden');
+                            document.body.style.overflow = 'auto';
+                        }
+                    }, 5000);
+                    
+                } else {
+                    throw new Error('Form submission failed');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                // Fallback: Show alert and let user email directly
+                alert('Sorry, there was an error sending your message. Please email me directly at danieloluwasegun488@gmail.com');
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        });
+        
+        // Form validation
+        function validateForm() {
+            let isValid = true;
+            
+            // Clear previous errors
+            document.querySelectorAll('.form-control').forEach(input => {
+                input.classList.remove('error');
+            });
+            
+            // Validate name
+            const name = document.getElementById('name').value.trim();
+            if (!name) {
+                document.getElementById('name').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate email
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate subject
+            const subject = document.getElementById('subject').value;
+            if (!subject) {
+                document.getElementById('subject').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate message
+            const message = document.getElementById('message').value.trim();
+            if (!message || message.length < 10) {
+                document.getElementById('message').classList.add('error');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+        
+        // Remove error class on input
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('error');
+            });
+        });
+        
+        // Close success message button
+        if (closeSuccessBtn) {
+            closeSuccessBtn.addEventListener('click', function() {
+                successMessage.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        // Close success message when clicking outside
+        if (successMessage) {
+            successMessage.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && successMessage && !successMessage.classList.contains('hidden')) {
+                successMessage.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
+
+// Check if URL has #success and show overlay
+if (window.location.hash === '#success') {
+    document.getElementById('successOverlay').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close success overlay
+function closeSuccess() {
+    document.getElementById('successOverlay').classList.remove('show');
+    document.body.style.overflow = 'auto';
+    // Remove #success from URL
+    history.replaceState(null, null, ' ');
+}
+
+// Close overlay with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSuccess();
+    }
+});
+
+// Close overlay when clicking outside
+document.getElementById('successOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeSuccess();
     }
 });
