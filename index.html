@@ -3,439 +3,492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oluwasegun Daniel | DevSync</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#8B4513">
+
+    <!-- Primary meta -->
+    <title>Oluwasegun Daniel — Frontend Engineer & Web Developer</title>
+    <meta name="description" content="Oluwasegun Daniel is a frontend engineer building fast, accessible, high-converting websites and web apps with HTML, CSS, JavaScript, React, Python and Django.">
+    <meta name="author" content="Oluwasegun Daniel">
+    <meta name="keywords" content="Frontend Engineer, Web Developer, JavaScript, React, Django, Python, UI/UX, Responsive Design, Portfolio, Nigeria">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://daniel-portfolio-six-nu.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oluwasegun Daniel — Frontend Engineer & Web Developer">
+    <meta property="og:description" content="Frontend engineer building fast, accessible, high-converting websites and web apps.">
+    <meta property="og:url" content="https://daniel-portfolio-six-nu.vercel.app/">
+    <meta property="og:image" content="https://daniel-portfolio-six-nu.vercel.app/two.jpg">
+    <meta property="og:image:alt" content="Portrait of Oluwasegun Daniel, Frontend Engineer">
+    <meta property="og:site_name" content="Oluwasegun Daniel">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oluwasegun Daniel — Frontend Engineer & Web Developer">
+    <meta name="twitter:description" content="Frontend engineer building fast, accessible, high-converting websites and web apps.">
+    <meta name="twitter:image" content="https://daniel-portfolio-six-nu.vercel.app/two.jpg">
+
+    <!-- Favicon (inline SVG monogram) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%238B4513'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='bold' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+    <!-- Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Oluwasegun Daniel",
+      "jobTitle": "Frontend Engineer",
+      "url": "https://daniel-portfolio-six-nu.vercel.app/",
+      "email": "mailto:danieloluwasegun488@gmail.com",
+      "image": "https://daniel-portfolio-six-nu.vercel.app/two.jpg",
+      "address": { "@type": "Place", "name": "Nigeria (Remote Worldwide)" },
+      "knowsAbout": ["Frontend Engineering", "JavaScript", "React", "Django", "Python", "Responsive Design", "UI/UX", "Web Performance"],
+      "sameAs": [
+        "https://github.com/Therealseun",
+        "https://www.linkedin.com/in/daniel-oluwasegun-1a5a14324",
+        "https://x.com/Oluwasegun4114"
+      ]
+    }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <header>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="siteHeader">
         <div class="container header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div>
-                    <div class="logo-text">Frontend Engineer</div>
-                    <div class="tagline">Focused on clean code, performance, and great user experiences.</div>
-                </div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
+            <a href="#hero" class="logo" aria-label="Oluwasegun Daniel — home">
+                <span class="logo-mark" aria-hidden="true">DO</span>
+                <span>
+                    <span class="logo-text">Oluwasegun Daniel</span>
+                    <span class="tagline">Frontend Engineer</span>
+                </span>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            
-            <nav id="mainNav">
+
+            <nav class="main-nav" id="mainNav" aria-label="Primary">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#portfolio">Work</a></li>
+                    <li><a href="#contact" class="nav-cta">Let's talk</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <i class="fas fa-rocket"></i>
-                        <span>Oluwasegun Daniel</span>
-                    </div>
-                    <h1>I Design & Build High-Converting Digital Experiences</h1>
-                    <p>Automotive systems, premium websites, and productivity tools designed to deliver measurable results.</p>
-                    <div class="hero-cta">
-                        <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                         <a href="Daniel Oluwasegun's CV.pdf" download class="btn btn-cv">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-image">
-                    <div class="profile-image-container">
-                        
-                        <div class="profile-image-wrapper">
-                            <img src="two.jpg" 
-                                 alt="Frontend Engineer" 
-                                 class="profile-pic">
-                            <div class="profile-overlay">
-                                <i class="fas fa-code"></i>
-                                <span>Oluwasegun </span>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-orb orb-1" aria-hidden="true"></div>
+            <div class="hero-orb orb-2" aria-hidden="true"></div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="hero-badge" data-reveal>
+                            <span class="status-dot" aria-hidden="true"></span>
+                            Available for new projects
+                        </span>
+                        <h1 id="hero-title" data-reveal style="--reveal-delay:.08s">
+                            I design &amp; build <span class="text-gradient">high-converting</span> digital experiences
+                        </h1>
+                        <p class="hero-lead" data-reveal style="--reveal-delay:.16s">
+                            Frontend engineer crafting premium websites, web apps, and productivity tools that are fast, accessible, and built to deliver measurable results.
+                        </p>
+                        <div class="hero-cta" data-reveal style="--reveal-delay:.24s">
+                            <a href="#portfolio" class="btn btn-primary">View my work</a>
+                            <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                            <a href="CV.pdf" download class="btn btn-cv">
+                                <i class="fas fa-download" aria-hidden="true"></i> Download CV
+                            </a>
+                        </div>
+                        <div class="hero-meta" data-reveal style="--reveal-delay:.32s">
+                            <div class="meta-item">
+                                <span class="meta-num">3+</span>
+                                <span class="meta-label">Projects shipped</span>
+                            </div>
+                            <span class="divider" aria-hidden="true"></span>
+                            <div class="meta-item">
+                                <span class="meta-num">95+</span>
+                                <span class="meta-label">Lighthouse score</span>
+                            </div>
+                            <span class="divider" aria-hidden="true"></span>
+                            <div class="meta-item">
+                                <span class="meta-num">24h</span>
+                                <span class="meta-label">Avg. response</span>
                             </div>
                         </div>
-                        <div class="profile-frame"></div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <h2>Who I Am</h2>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text fade-in-left">
-                    <h3>Frontend Engineer & Digital Solutions Architect</h3>
-                    <p>I am a Front-End Engineer passionate about crafting fast, accessible, and visually refined web experiences. I specialize in transforming ideas and designs into clean, responsive interfaces that work seamlessly across all devices.</p>
-                    <p>Whether I’m building a new interface from scratch or refining an existing product, I focus on quality, clarity, and scalability. My goal is to create digital experiences that are not only functional, but <strong>deliver measurable results</strong>.</p>
-                    
-                    <div class="highlight-box">
-                        <p>Outside of client work, I constantly refine my frontend skills by building personal projects and studying modern UI patterns.
-This continuous learning keeps my work efficient, adaptable, and aligned with current web standards.</p>
-                    </div>
-                    
-                    <div class="skills">
-                        <span class="skill">HTML</span>
-                        <span class="skill">CSS</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">React</span>
-                        <span class="skill">Responsive Design</span>
-                        <span class="skill">UI/UX</span>
-                        <span class="skill">Performance</span>
-                        <span class="skill">Django</span>
-                        <span class="skill">Python</span>
-                    </div>
-                </div>
-                
-                <div class="about-image fade-in-right">
-                    <div class="image-placeholder">
-                        <div style="text-align: center;">
-                            <i class="fas fa-laptop-code floating-icon" style="font-size: 5rem; margin-bottom: 25px;"></i>
-                            <div style="font-size: 1.4rem; font-weight: 600;">Building Digital Experiences</div>
-                            <div style="margin-top: 15px; font-size: 1rem; opacity: 0.8;">That convert and perform</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
- 
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <h2>What I Offer</h2>
-                <p>I provide modern, reliable, and performance-driven frontend solutions that help businesses present their brand professionally and convert visitors into users.</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Frontend Engineering</h3>
-                    <p>Modern, maintainable interfaces built with HTML, CSS, JavaScript, and component-driven architectures.</p>
-                </div>
-                
-                <div class="service-card fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Responsive Web Design</h3>
-                    <p>Mobile-first layouts optimized for speed, usability, and accessibility across all devices.</p>
-                </div>
-                
-                <div class="service-card fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="service-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3>Performance Optimization</h3>
-                    <p>Faster load times, optimized assets, and clean rendering pipelines for better user experience.</p>
-                </div>
-                
-                <div class="service-card fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="service-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Website Revamps & Migrations</h3>
-                    <p>Redesigning outdated websites into modern, conversion-focused platforms.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <h2>Portfolio / Case Studies</h2>
-                <p>Selected projects & real-world results that demonstrate my expertise.</p>
-            </div>
-            
-            <div class="portfolio-grid">
-                
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #2c3e50;">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-content">
-                        <div class="status-badge">🚧 Still in Progress</div>
-                        <h3>KU MarketPlace</h3>
-                        <p>Full Stack E-commerce platform built with Django, REST APIs, and PostgreSQL. A comprehensive marketplace with user authentication, product management, and payment integration.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">REST APIs</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        
-                        <div class="tools-used">
-                            <h4>Tools Used:</h4>
-                            <p>Vercel, DeepSeek, GitHub, VS Code</p>
-                        </div>
-                        
-                        <div class="project-buttons">
-  <a 
-    href="https://ku-market-place.vercel.app/" 
-    target="_blank" 
-    class="btn btn-primary"
-  >
-    Live Preview
-  </a>
-
-  <a 
-    href="https://github.com/Therealseun/KU-MarketPlace" 
-    target="_blank" 
-    class="btn btn-secondary"
-  >
-    GitHub Repo
-  </a>
-</div>
-
-                    </div>
-                </div>
-                
-
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #1a1a2e;">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <div class="project-content">
-                        <div class="status-badge">🚧 Still in Progress</div>
-                        <h3>Lens Essence Studio</h3>
-                        <p>Creative portfolio website with modern UI animations and responsive design. A visually stunning showcase for photographers with smooth transitions and interactive galleries.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">GSAP Animations</span>
-                            <span class="tech-tag">Responsive Design</span>
-                        </div>
-                        
-                        <div class="tools-used">
-                            <h4>Tools Used:</h4>
-                            <p>Vercel, GitHub, VS Code</p>
-                        </div>
-                        
-                        <div class="project-buttons">
-                            <button class="btn btn-primary">Coming Soon</button>
-                            <a 
-    href="https://github.com/Therealseun/lens-essence" 
-    target="_blank" 
-    class="btn btn-secondary"
-  >
-    GitHub Repo
-  </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image" style="background-color: #8B4513;">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase projects, skills, and technical experience. Features smooth animations and clean design.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Responsive Design</span>
-                            <span class="tech-tag">CSS Animations</span>
-                        </div>
-                        
-                        <div class="tools-used">
-                            <h4>Tools Used:</h4>
-                            <p>Vercel, GitHub, VS Code</p>
-                        </div>
-                        
-                        <div class="project-outcome">
-                            <h4>Outcome:</h4>
-                            <ul>
-                                <li>Fully responsive design across all devices</li>
-                                <li>Smooth animations and transitions</li>
-                                <li>Optimized performance (95+ Lighthouse score)</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="project-buttons">
-  <a 
-    href="https://daniel-portfolio-six-nu.vercel.app/" 
-    target="_blank" 
-    class="btn btn-primary"
-  >
-    Live Preview
-  </a>
-
-  <a 
-    href="https://github.com/Therealseun/Portfolio" 
-    target="_blank" 
-    class="btn btn-secondary"
-  >
-    GitHub Repo
-  </a>
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-            <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact Me</h2>
-                <p>Let's build something amazing together</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Ready to Start Your Project?</h3>
-                    <p>Have a project in mind or need help improving your website? I'd love to hear from you. Fill out the form or reach out directly.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                    <div class="hero-image" data-reveal style="--reveal-delay:.2s">
+                        <div class="profile-image-container">
+                            <div class="profile-frame" aria-hidden="true"></div>
+                            <div class="profile-image-wrapper">
+                                <img src="two.jpg" width="400" height="500"
+                                     fetchpriority="high" decoding="async"
+                                     alt="Portrait of Oluwasegun Daniel, Frontend Engineer"
+                                     class="profile-pic">
+                                <div class="profile-overlay" aria-hidden="true">
+                                    <i class="fas fa-code"></i>
+                                    <span>Oluwasegun Daniel</span>
+                                </div>
                             </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p id="contact-email">danieloluwasegun488@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Nigeria — Remote Worldwide</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4>Response Time</h4>
-                                <p>Within 24 hours</p>
+                            <div class="floating-chip" aria-hidden="true">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>
+                                    <span class="chip-title">Frontend Engineer</span>
+                                    <span class="chip-sub">React · Django · UI/UX</span>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                    <!-- Success Overlay - Will show if URL has #success -->
-                    <div id="successOverlay" class="success-overlay">
-                        <div class="success-box">
-                            <div class="success-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <h3>Message Sent Successfully!</h3>
-                            <p>Thank you for your message. I'll get back to you within 24 hours.</p>
-                            <button class="btn btn-primary" onclick="closeSuccess()">Continue</button>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="eyebrow">About me</span>
+                    <h2 id="about-title">Who I am</h2>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text" data-reveal>
+                        <h3>Frontend Engineer &amp; Digital Solutions Architect</h3>
+                        <p>I'm a front-end engineer passionate about crafting fast, accessible, and visually refined web experiences. I specialize in transforming ideas and designs into clean, responsive interfaces that work seamlessly across all devices.</p>
+                        <p>Whether I'm building a new interface from scratch or refining an existing product, I focus on quality, clarity, and scalability. My goal is to create digital experiences that are not only functional, but <strong>deliver measurable results</strong>.</p>
+
+                        <div class="highlight-box">
+                            <p>Outside of client work, I constantly refine my frontend skills by building personal projects and studying modern UI patterns — keeping my work efficient, adaptable, and aligned with current web standards.</p>
+                        </div>
+
+                        <p class="skills-label">Tech I work with</p>
+                        <div class="skills">
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">React</span>
+                            <span class="skill">Responsive Design</span>
+                            <span class="skill">UI/UX</span>
+                            <span class="skill">Performance</span>
+                            <span class="skill">Django</span>
+                            <span class="skill">Python</span>
                         </div>
                     </div>
-                    
-                    <!-- Regular FormSubmit.co Form -->
-                    <form action="https://formsubmit.co/danieloluwasegun488@gmail.com" method="POST">
-                        <!-- Hidden fields -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="New Contact - Portfolio Website">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://daniel-portfolio-six-nu.vercel.app/">
-                        
-                        <!-- Honeypot -->
-                        <input type="text" name="_honey" style="display:none">
-                        
-                        <!-- Form fields -->
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+
+                    <div class="about-image">
+                        <div class="about-cards">
+                            <article class="about-card" data-reveal style="--reveal-delay:.05s">
+                                <div class="ac-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                                <h4>Clean, scalable code</h4>
+                                <p>Maintainable, component-driven interfaces built with modern best practices.</p>
+                            </article>
+                            <article class="about-card" data-reveal style="--reveal-delay:.13s">
+                                <div class="ac-icon"><i class="fas fa-gauge-high" aria-hidden="true"></i></div>
+                                <h4>Performance-first</h4>
+                                <p>Fast load times, optimized assets, and smooth, GPU-friendly interactions.</p>
+                            </article>
+                            <article class="about-card" data-reveal style="--reveal-delay:.21s">
+                                <div class="ac-icon"><i class="fas fa-universal-access" aria-hidden="true"></i></div>
+                                <h4>Accessible &amp; responsive</h4>
+                                <p>Inclusive, mobile-first layouts that look and work great on every screen.</p>
+                            </article>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" class="form-control" required>
-                                <option value="">Select a subject</option>
-                                <option value="Project Inquiry">Project Inquiry</option>
-                                <option value="Job Opportunity">Job Opportunity</option>
-                                <option value="Website Review">Website Review</option>
-                                <option value="Collaboration">Collaboration</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project..." rows="5" required></textarea>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                            <button type="reset" class="btn btn-secondary">Clear Form</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
+        <!-- Services -->
+        <section id="services" class="services-section bg-alt" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="eyebrow">What I offer</span>
+                    <h2 id="services-title">Services</h2>
+                    <p>Modern, reliable, performance-driven frontend solutions that help businesses present their brand professionally and convert visitors into users.</p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card" data-reveal>
+                        <div class="service-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                        <h3>Frontend Engineering</h3>
+                        <p>Modern, maintainable interfaces built with HTML, CSS, JavaScript, and component-driven architectures.</p>
+                    </article>
+                    <article class="service-card" data-reveal style="--reveal-delay:.09s">
+                        <div class="service-icon"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i></div>
+                        <h3>Responsive Web Design</h3>
+                        <p>Mobile-first layouts optimized for speed, usability, and accessibility across all devices.</p>
+                    </article>
+                    <article class="service-card" data-reveal style="--reveal-delay:.18s">
+                        <div class="service-icon"><i class="fas fa-gauge-high" aria-hidden="true"></i></div>
+                        <h3>Performance Optimization</h3>
+                        <p>Faster load times, optimized assets, and clean rendering pipelines for a better user experience.</p>
+                    </article>
+                    <article class="service-card" data-reveal style="--reveal-delay:.27s">
+                        <div class="service-icon"><i class="fas fa-arrows-rotate" aria-hidden="true"></i></div>
+                        <h3>Website Revamps &amp; Migrations</h3>
+                        <p>Redesigning outdated websites into modern, conversion-focused platforms.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-title">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="eyebrow">Portfolio</span>
+                    <h2 id="portfolio-title">Selected work &amp; case studies</h2>
+                    <p>Real-world projects that demonstrate my expertise across frontend and full-stack development.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <article class="project-card" data-reveal>
+                        <div class="project-image">
+                            <i class="fas fa-shopping-cart proj-glyph" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="status-badge"><i class="fas fa-person-digging" aria-hidden="true"></i> In progress</span>
+                            <h3>KU MarketPlace</h3>
+                            <p>Full-stack e-commerce platform built with Django, REST APIs, and PostgreSQL — a comprehensive marketplace with user authentication, product management, and payment integration.</p>
+
+                            <div class="project-tech">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+
+                            <div class="tools-used">
+                                <h4>Tools used</h4>
+                                <p>Vercel, GitHub, VS Code</p>
+                            </div>
+
+                            <div class="project-buttons">
+                                <a href="https://ku-market-place.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                                    Live preview <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://github.com/Therealseun/KU-MarketPlace" target="_blank" rel="noopener" class="btn btn-secondary">
+                                    <i class="fab fa-github" aria-hidden="true"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-reveal style="--reveal-delay:.1s">
+                        <div class="project-image">
+                            <i class="fas fa-camera-retro proj-glyph" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="status-badge"><i class="fas fa-person-digging" aria-hidden="true"></i> In progress</span>
+                            <h3>Lens Essence Studio</h3>
+                            <p>Creative portfolio website with modern UI animations and responsive design — a visually stunning showcase for photographers with smooth transitions and interactive galleries.</p>
+
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">GSAP</span>
+                                <span class="tech-tag">Responsive Design</span>
+                            </div>
+
+                            <div class="tools-used">
+                                <h4>Tools used</h4>
+                                <p>Vercel, GitHub, VS Code</p>
+                            </div>
+
+                            <div class="project-buttons">
+                                <button class="btn btn-primary" disabled>Coming soon</button>
+                                <a href="https://github.com/Therealseun/lens-essence" target="_blank" rel="noopener" class="btn btn-secondary">
+                                    <i class="fab fa-github" aria-hidden="true"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-reveal style="--reveal-delay:.2s">
+                        <div class="project-image">
+                            <i class="fas fa-laptop-code proj-glyph" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Personal Portfolio Website</h3>
+                            <p>A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase projects, skills, and technical experience, featuring smooth animations and a clean design.</p>
+
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive Design</span>
+                                <span class="tech-tag">CSS Animations</span>
+                            </div>
+
+                            <div class="project-outcome">
+                                <h4>Outcome</h4>
+                                <ul>
+                                    <li>Fully responsive across all devices</li>
+                                    <li>Smooth animations and transitions</li>
+                                    <li>Optimized performance (95+ Lighthouse)</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-buttons">
+                                <a href="https://daniel-portfolio-six-nu.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                                    Live preview <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://github.com/Therealseun/Portfolio" target="_blank" rel="noopener" class="btn btn-secondary">
+                                    <i class="fab fa-github" aria-hidden="true"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact-section bg-alt" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="eyebrow">Contact</span>
+                    <h2 id="contact-title">Let's build something great</h2>
+                    <p>Have a project in mind or need help improving your website? I'd love to hear from you.</p>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-info" data-reveal>
+                        <h3>Ready to start your project?</h3>
+                        <p>Fill out the form or reach out directly — I typically respond within 24 hours.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <button type="button" class="copy-email" id="copyEmail" aria-label="Copy email address danieloluwasegun488@gmail.com">
+                                        <span id="emailText">danieloluwasegun488@gmail.com</span>
+                                        <span class="copy-hint" id="copyHint" aria-hidden="true"><i class="fas fa-copy"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Nigeria — Remote Worldwide</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                                <div>
+                                    <h4>Response time</h4>
+                                    <p>Within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form" data-reveal style="--reveal-delay:.1s">
+                        <form id="contactForm" action="/api/contact" method="POST" novalidate>
+                            <!-- Honeypot: bots fill this hidden field; humans never see it -->
+                            <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+                            <div class="form-group">
+                                <label for="name">Full name *</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" autocomplete="name" required aria-describedby="err-name">
+                                <span class="field-error" id="err-name">Please enter your name.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email address *</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" autocomplete="email" required aria-describedby="err-email">
+                                <span class="field-error" id="err-email">Please enter a valid email address.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" class="form-control" required aria-describedby="err-subject">
+                                    <option value="">Select a subject</option>
+                                    <option value="Project Inquiry">Project Inquiry</option>
+                                    <option value="Job Opportunity">Job Opportunity</option>
+                                    <option value="Website Review">Website Review</option>
+                                    <option value="Collaboration">Collaboration</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="field-error" id="err-subject">Please choose a subject.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project..." rows="5" required aria-describedby="err-message"></textarea>
+                                <span class="field-error" id="err-message">Please enter a message (at least 10 characters).</span>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Send message</button>
+                                <button type="reset" class="btn btn-secondary">Clear form</button>
+                            </div>
+                            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <div class="footer-logo">Oluwasegun Daniel</Data></div>
-                    <p>Automotive systems, premium websites, and productivity tools designed to deliver measurable results.</p>
+                    <span class="footer-logo">
+                        <span class="logo-mark" aria-hidden="true">DO</span>
+                        Oluwasegun Daniel
+                    </span>
+                    <p>Frontend engineer building premium websites, web apps, and productivity tools designed to deliver measurable results.</p>
                     <div class="social-links">
-                        <a href="https://github.com/Therealseun" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/daniel-oluwasegun-1a5a14324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/Oluwasegun4114?t=77dBZh7c9c0AGDS76664EA&s=09" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/Therealseun" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/daniel-oluwasegun-1a5a14324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://x.com/Oluwasegun4114?t=77dBZh7c9c0AGDS76664EA&s=09" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-heading">Quick Links</h3>
+
+                <nav class="footer-links" aria-label="Quick links">
+                    <h3 class="footer-heading">Quick links</h3>
                     <ul>
-                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#about">About me</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#portfolio">Work</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                </div>
-                
+                </nav>
+
                 <div class="footer-links">
                     <h3 class="footer-heading">Services</h3>
                     <ul>
@@ -446,17 +499,26 @@ This continuous learning keeps my work efficient, adaptable, and aligned with cu
                     </ul>
                 </div>
             </div>
-            
+
             <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> Oluwasegun Daniel. All rights reserved. Designed with a focus on performance and conversion.</p>
+                <p>&copy; <span id="currentYear"></span> Oluwasegun Daniel. All rights reserved. Built with a focus on performance and conversion.</p>
             </div>
         </div>
     </footer>
 
-    
-    <button class="scroll-to-top" id="scrollToTop">
-        <i class="fas fa-chevron-up"></i>
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
+
+    <!-- Success modal (hidden by default) -->
+    <div id="successOverlay" class="success-overlay" role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-hidden="true">
+        <div class="success-box">
+            <div class="success-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <h3 id="successTitle">Message sent successfully</h3>
+            <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+            <button class="btn btn-primary" id="successClose" type="button">Continue</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
