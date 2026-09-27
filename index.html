@@ -39,7 +39,7 @@
 
     <!-- Icons -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 
@@ -65,14 +65,27 @@
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="pre-inner">
+            <span class="pre-mark">DO</span>
+            <span class="pre-name">Oluwasegun Daniel</span>
+            <span class="pre-bar"><span class="pre-fill"></span></span>
+        </div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" id="siteHeader">
         <div class="container header-container">
             <a href="#hero" class="logo" aria-label="Oluwasegun Daniel — home">
                 <span class="logo-mark" aria-hidden="true">DO</span>
-                <span>
-                    <span class="logo-text">Oluwasegun Daniel</span>
+                <span class="logo-text-wrap">
+                    <span class="logo-text" data-scramble>Oluwasegun Daniel</span>
                     <span class="tagline">Frontend Engineer</span>
                 </span>
             </a>
@@ -96,49 +109,56 @@
         <!-- Hero -->
         <section class="hero" id="hero" aria-labelledby="hero-title">
             <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-canvas-wrap" aria-hidden="true"><canvas id="heroCanvas"></canvas></div>
+            <div class="hero-grid" aria-hidden="true"></div>
+            <div class="hero-shard shard-a" aria-hidden="true"></div>
+            <div class="hero-shard shard-b" aria-hidden="true"></div>
+            <div class="hero-shard shard-c" aria-hidden="true"></div>
             <div class="hero-orb orb-1" aria-hidden="true"></div>
             <div class="hero-orb orb-2" aria-hidden="true"></div>
 
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <span class="hero-badge" data-reveal>
+                        <span class="hero-badge hero-el" style="--d:.1s">
                             <span class="status-dot" aria-hidden="true"></span>
                             Available for new projects
                         </span>
-                        <h1 id="hero-title" data-reveal style="--reveal-delay:.08s">
+                        <h1 id="hero-title" class="split" style="--d:.12s">
                             I design &amp; build <span class="text-gradient">high-converting</span> digital experiences
                         </h1>
-                        <p class="hero-lead" data-reveal style="--reveal-delay:.16s">
+                        <p class="hero-lead hero-el" style="--d:.3s">
                             Frontend engineer crafting premium websites, web apps, and productivity tools that are fast, accessible, and built to deliver measurable results.
                         </p>
-                        <div class="hero-cta" data-reveal style="--reveal-delay:.24s">
-                            <a href="#portfolio" class="btn btn-primary">View my work</a>
-                            <a href="#contact" class="btn btn-secondary">Get in touch</a>
-                            <a href="CV.pdf" download class="btn btn-cv">
+                        <div class="hero-cta hero-el" style="--d:.42s">
+                            <a href="#portfolio" class="btn btn-primary magnetic">View my work</a>
+                            <a href="#contact" class="btn btn-secondary magnetic">Get in touch</a>
+                            <a href="CV.pdf" download class="btn btn-cv magnetic">
                                 <i class="fas fa-download" aria-hidden="true"></i> Download CV
                             </a>
                         </div>
-                        <div class="hero-meta" data-reveal style="--reveal-delay:.32s">
+                        <div class="hero-meta hero-el" style="--d:.54s">
                             <div class="meta-item">
-                                <span class="meta-num">3+</span>
+                                <span class="meta-num" data-count="3" data-suffix="+">3+</span>
                                 <span class="meta-label">Projects shipped</span>
                             </div>
                             <span class="divider" aria-hidden="true"></span>
                             <div class="meta-item">
-                                <span class="meta-num">95+</span>
+                                <span class="meta-num" data-count="95" data-suffix="+">95+</span>
                                 <span class="meta-label">Lighthouse score</span>
                             </div>
                             <span class="divider" aria-hidden="true"></span>
                             <div class="meta-item">
-                                <span class="meta-num">24h</span>
+                                <span class="meta-num" data-count="24" data-suffix="h">24h</span>
                                 <span class="meta-label">Avg. response</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="hero-image" data-reveal style="--reveal-delay:.2s">
+                    <div class="hero-image hero-el" data-parallax="0.12" style="--d:.36s">
                         <div class="profile-image-container">
+                            <div class="orbit-ring ring-1" aria-hidden="true"></div>
+                            <div class="orbit-ring ring-2" aria-hidden="true"></div>
                             <div class="profile-frame" aria-hidden="true"></div>
                             <div class="profile-image-wrapper">
                                 <img src="two.jpg" width="400" height="500"
@@ -161,15 +181,26 @@
                     </div>
                 </div>
             </div>
-        </section>
+
+    <!-- Anime-style kinetic ribbon -->
+                <div class="skill-ribbon" id="skillRibbon" aria-label="Technologies I work with">
+                    <div class="ribbon-track" id="ribbonTrack">
+                        <span>JavaScript</span><span>React</span><span>TypeScript</span><span>Django</span><span>Python</span><span>GSAP</span><span>Three.js</span><span>Node.js</span><span>PostgreSQL</span><span>REST APIs</span><span>UI/UX</span><span>Performance</span>
+                    </div>
+                </div>
+            <a class="hero-scroll-cue hero-el" style="--d:1.1s" href="#about" aria-label="Scroll to about">
+                <span aria-hidden="true"></span>
+            </a>
+    </section>
 
         <!-- About -->
         <section id="about" class="about-section" aria-labelledby="about-title">
+        <span class="section-watermark" data-parallax="0.05" aria-hidden="true">About</span>
             <div class="container">
                 <div class="section-header" data-reveal>
-                    <span class="eyebrow">About me</span>
-                    <h2 id="about-title">Who I am</h2>
-                </div>
+            <span class="eyebrow">About me</span>
+            <h2 id="about-title" class="flip-scene">Who I am</h2>
+        </div>
 
                 <div class="about-content">
                     <div class="about-text" data-reveal>
@@ -197,17 +228,17 @@
 
                     <div class="about-image">
                         <div class="about-cards">
-                            <article class="about-card" data-reveal style="--reveal-delay:.05s">
+                            <article class="about-card" data-tilt data-reveal style="--reveal-delay:.05s">
                                 <div class="ac-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
                                 <h4>Clean, scalable code</h4>
                                 <p>Maintainable, component-driven interfaces built with modern best practices.</p>
                             </article>
-                            <article class="about-card" data-reveal style="--reveal-delay:.13s">
+                            <article class="about-card" data-tilt data-reveal style="--reveal-delay:.13s">
                                 <div class="ac-icon"><i class="fas fa-gauge-high" aria-hidden="true"></i></div>
                                 <h4>Performance-first</h4>
                                 <p>Fast load times, optimized assets, and smooth, GPU-friendly interactions.</p>
                             </article>
-                            <article class="about-card" data-reveal style="--reveal-delay:.21s">
+                            <article class="about-card" data-tilt data-reveal style="--reveal-delay:.21s">
                                 <div class="ac-icon"><i class="fas fa-universal-access" aria-hidden="true"></i></div>
                                 <h4>Accessible &amp; responsive</h4>
                                 <p>Inclusive, mobile-first layouts that look and work great on every screen.</p>
@@ -220,30 +251,31 @@
 
         <!-- Services -->
         <section id="services" class="services-section bg-alt" aria-labelledby="services-title">
+        <span class="section-watermark" data-parallax="0.05" aria-hidden="true">Services</span>
             <div class="container">
                 <div class="section-header" data-reveal>
-                    <span class="eyebrow">What I offer</span>
-                    <h2 id="services-title">Services</h2>
-                    <p>Modern, reliable, performance-driven frontend solutions that help businesses present their brand professionally and convert visitors into users.</p>
-                </div>
+            <span class="eyebrow">What I offer</span>
+            <h2 id="services-title" class="flip-scene">Services</h2>
+            <p>Modern, reliable, performance-driven frontend solutions that help businesses present their brand professionally and convert visitors into users.</p>
+        </div>
 
                 <div class="services-grid">
-                    <article class="service-card" data-reveal>
+                    <article class="service-card" data-tilt data-reveal>
                         <div class="service-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
                         <h3>Frontend Engineering</h3>
                         <p>Modern, maintainable interfaces built with HTML, CSS, JavaScript, and component-driven architectures.</p>
                     </article>
-                    <article class="service-card" data-reveal style="--reveal-delay:.09s">
+                    <article class="service-card" data-tilt data-reveal style="--reveal-delay:.09s">
                         <div class="service-icon"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i></div>
                         <h3>Responsive Web Design</h3>
                         <p>Mobile-first layouts optimized for speed, usability, and accessibility across all devices.</p>
                     </article>
-                    <article class="service-card" data-reveal style="--reveal-delay:.18s">
+                    <article class="service-card" data-tilt data-reveal style="--reveal-delay:.18s">
                         <div class="service-icon"><i class="fas fa-gauge-high" aria-hidden="true"></i></div>
                         <h3>Performance Optimization</h3>
                         <p>Faster load times, optimized assets, and clean rendering pipelines for a better user experience.</p>
                     </article>
-                    <article class="service-card" data-reveal style="--reveal-delay:.27s">
+                    <article class="service-card" data-tilt data-reveal style="--reveal-delay:.27s">
                         <div class="service-icon"><i class="fas fa-arrows-rotate" aria-hidden="true"></i></div>
                         <h3>Website Revamps &amp; Migrations</h3>
                         <p>Redesigning outdated websites into modern, conversion-focused platforms.</p>
@@ -253,18 +285,20 @@
         </section>
 
         <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-title">
+        <span class="section-watermark" data-parallax="0.05" aria-hidden="true">Work</span>
             <div class="container">
                 <div class="section-header" data-reveal>
                     <span class="eyebrow">Portfolio</span>
-                    <h2 id="portfolio-title">Selected work &amp; case studies</h2>
+                    <h2 id="portfolio-title" class="scroll-lit">Selected work &amp; case studies</h2>
                     <p>Real-world projects that demonstrate my expertise across frontend and full-stack development.</p>
                 </div>
 
                 <div class="portfolio-grid">
-                    <article class="project-card" data-reveal>
-                        <div class="project-image">
-                            <i class="fas fa-shopping-cart proj-glyph" aria-hidden="true"></i>
-                        </div>
+                    <article class="project-card" data-tilt data-reveal>
+                        <a class="project-image project-shot" href="https://ku-market-place.vercel.app/" target="_blank" rel="noopener" aria-label="Open the KU MarketPlace live site">
+                            <iframe src="https://ku-market-place.vercel.app/" title="KU MarketPlace website preview" loading="lazy" tabindex="-1" scrolling="no" aria-hidden="true" referrerpolicy="no-referrer"></iframe>
+                            <span class="shot-veil" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i><span>Visit live site</span></span>
+                        </a>
                         <div class="project-content">
                             <span class="status-badge"><i class="fas fa-person-digging" aria-hidden="true"></i> In progress</span>
                             <h3>KU MarketPlace</h3>
@@ -294,21 +328,21 @@
                         </div>
                     </article>
 
-                    <article class="project-card" data-reveal style="--reveal-delay:.1s">
-                        <div class="project-image">
-                            <i class="fas fa-camera-retro proj-glyph" aria-hidden="true"></i>
-                        </div>
+                    <article class="project-card" data-tilt data-reveal style="--reveal-delay:.1s">
+                        <a class="project-image project-shot" href="https://valueaccelerate-services-limited.vercel.app/" target="_blank" rel="noopener" aria-label="Open the ValueAccelerate Services Limited live site">
+                            <iframe src="https://valueaccelerate-services-limited.vercel.app/" title="ValueAccelerate Services Limited website preview" loading="lazy" tabindex="-1" scrolling="no" aria-hidden="true" referrerpolicy="no-referrer"></iframe>
+                            <span class="shot-veil" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i><span>Visit live site</span></span>
+                        </a>
                         <div class="project-content">
-                            <span class="status-badge"><i class="fas fa-person-digging" aria-hidden="true"></i> In progress</span>
-                            <h3>Lens Essence Studio</h3>
-                            <p>Creative portfolio website with modern UI animations and responsive design — a visually stunning showcase for photographers with smooth transitions and interactive galleries.</p>
+                            <h3>ValueAccelerate Services Limited</h3>
+                            <p>Business registration &amp; advisory website for a Nigerian consulting firm — guiding entrepreneurs, startups and SMEs from CAC registration to documentation, compliance and advisory, with service pages, FAQs and a WhatsApp-ready contact flow.</p>
 
                             <div class="project-tech">
                                 <span class="tech-tag">HTML5</span>
                                 <span class="tech-tag">CSS3</span>
                                 <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">GSAP</span>
                                 <span class="tech-tag">Responsive Design</span>
+                                <span class="tech-tag">SEO</span>
                             </div>
 
                             <div class="tools-used">
@@ -317,28 +351,31 @@
                             </div>
 
                             <div class="project-buttons">
-                                <button class="btn btn-primary" disabled>Coming soon</button>
-                                <a href="https://github.com/Therealseun/lens-essence" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <a href="https://valueaccelerate-services-limited.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                                    Live preview <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://github.com/Therealseun/Valueaccelerate-Services-Limited" target="_blank" rel="noopener" class="btn btn-secondary">
                                     <i class="fab fa-github" aria-hidden="true"></i> Code
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="project-card" data-reveal style="--reveal-delay:.2s">
-                        <div class="project-image">
-                            <i class="fas fa-laptop-code proj-glyph" aria-hidden="true"></i>
-                        </div>
+                    <article class="project-card" data-tilt data-reveal style="--reveal-delay:.2s">
+                        <a class="project-image project-shot" href="https://el-strange.vercel.app/" target="_blank" rel="noopener" aria-label="Open the personal portfolio live site">
+                            <iframe src="https://el-strange.vercel.app/" title="Personal portfolio website preview" loading="lazy" tabindex="-1" scrolling="no" aria-hidden="true" referrerpolicy="no-referrer"></iframe>
+                            <span class="shot-veil" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i><span>Visit live site</span></span>
+                        </a>
                         <div class="project-content">
                             <h3>Personal Portfolio Website</h3>
-                            <p>A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase projects, skills, and technical experience, featuring smooth animations and a clean design.</p>
+                            <p>My personal portfolio built with Next.js and TypeScript — showcasing projects, skills, and technical experience with smooth animations and a clean, responsive design.</p>
 
                             <div class="project-tech">
-                                <span class="tech-tag">HTML5</span>
-                                <span class="tech-tag">CSS3</span>
-                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">React</span>
                                 <span class="tech-tag">Responsive Design</span>
-                                <span class="tech-tag">CSS Animations</span>
+                                <span class="tech-tag">Vercel</span>
                             </div>
 
                             <div class="project-outcome">
@@ -351,10 +388,10 @@
                             </div>
 
                             <div class="project-buttons">
-                                <a href="https://daniel-portfolio-six-nu.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                                <a href="https://el-strange.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
                                     Live preview <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://github.com/Therealseun/Portfolio" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <a href="https://github.com/Therealseun/Strange-portfolio" target="_blank" rel="noopener" class="btn btn-secondary">
                                     <i class="fab fa-github" aria-hidden="true"></i> Code
                                 </a>
                             </div>
@@ -365,6 +402,7 @@
         </section>
 
         <section id="contact" class="contact-section bg-alt" aria-labelledby="contact-title">
+        <span class="section-watermark" data-parallax="0.05" aria-hidden="true">Contact</span>
             <div class="container">
                 <div class="section-header" data-reveal>
                     <span class="eyebrow">Contact</span>
